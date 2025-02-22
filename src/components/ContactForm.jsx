@@ -1,17 +1,92 @@
+import { useState, useRef, useEffect } from "react";
+import emailjs from "@emailjs/browser";
+import { Toaster, toast } from 'sonner'
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import 'swiper/css';
-import 'swiper/css/navigation';
-import { useState } from "react";
+gsap.registerPlugin(ScrollTrigger);
 
 const ContactForm = () => {
+  const sectionRef = useRef(null);
+  const suptitle1Ref = useRef(null);
+  const suptitle2Ref = useRef(null);
+  const suptitle3Ref = useRef(null);
+  const iconsRef = useRef(null);
+  const submitRef = useRef(null);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: ""
   });
 
-  const [status, setStatus] = useState(null);
+  const [isSending, setIsSending] = useState(false);
+
+  useEffect(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top center",
+        end: "+=700",
+        toggleActions: "play reverse play reverse",
+      },
+    })
+
+    tl.fromTo(
+      suptitle1Ref.current,
+      { opacity: 0, x: 100 },
+      { opacity: 1, x: 0, duration: 1, ease: "power2.out" },
+    )
+
+    tl.fromTo(
+      suptitle2Ref.current,
+      { opacity: 0, x: 100 },
+      { opacity: 1, x: 0, duration: 1, ease: "power2.out" },
+      0.2
+    )
+
+    tl.fromTo(
+      suptitle3Ref.current,
+      { opacity: 0, x: 100 },
+      { opacity: 1, x: 0, duration: 1, ease: "power2.out" },
+      0.4
+    )
+
+    tl.fromTo(
+      iconsRef.current,
+      { opacity: 0, y: -100 },
+      { opacity: 1, y: 0, duration: 1, ease: "power2.out" },
+      0.4
+    )
+
+    tl.fromTo(
+      '.name',
+      { opacity: 0, x: -100 },
+      { opacity: 1, x: 0, duration: 1, ease: "power2.out" },
+      0.6
+    )
+
+    tl.fromTo(
+      '.email',
+      { opacity: 0, x: 100 },
+      { opacity: 1, x: 0, duration: 1, ease: "power2.out" },
+      0.2
+    )
+
+    tl.fromTo(
+      '.message',
+      { opacity: 0, x: -100 },
+      { opacity: 1, x: 0, duration: 1, ease: "power2.out" },
+      0.2
+    )
+
+    tl.fromTo(
+      submitRef.current,
+      { opacity: 0, x: 100 },
+      { opacity: 1, x: 0, duration: 1, ease: "power2.out" },
+      0.2
+    )
+  }, [])
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,32 +95,37 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus("Sending...");
+    setIsSending(true);
 
-    try {
-      const response = await fetch("https://formspree.io/f/{your_form_id}", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData)
+    console.log(formData)
+    
+
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formData,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      ).then(
+        (response) => {
+          toast.success('Message sent successfully!')
+          setFormData({ name: "", email: "", message: "" });
+        },
+        (error) => {
+          toast.fail('Failed to send message.')
+        }
+      ).finally(() => {
+        setIsSending(false)
       });
-
-      if (response.ok) {
-        setStatus("Message sent successfully!");
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        setStatus("Failed to send message.");
-      }
-    } catch (error) {
-      setStatus("An error occurred.");
-    }
   };
 
   return (
-    <section className="py-20 px-10 max-w-4xl mx-auto text-center">
-      <h2 className="text-4xl font-bold text-white mb-6">Would you like to work Together?</h2>
-      <p className="text-gray-300">Email: <strong>xuyuwei19940909@gmail.com</strong></p>
-      <p className="text-gray-300">Call: <strong>+1 236-867-7624</strong></p>
-      <div className="flex justify-center gap-6 text-3xl mt-4">
+    <section ref={sectionRef} className="py-20 px-10 max-w-4xl mx-auto text-center">
+      <Toaster position="top-center" richColors />
+      <h2 ref={suptitle1Ref} className="text-4xl font-bold text-white mb-6">Would you like to work Together?</h2>
+      <p ref={suptitle2Ref} className="text-gray-300">Email: <strong>xuyuwei19940909@gmail.com</strong></p>
+      <p ref={suptitle3Ref} className="text-gray-300">Call: <strong>+1 236-867-7624</strong></p>
+      <div ref={iconsRef} className="flex justify-center gap-6 text-3xl mt-4">
         <a href="https://github.com/PhilharmonicHsu" target="_blank" className="text-gray-300 hover:text-pink-400">
           <svg width="50" height="50" viewBox="0 0 66 66" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M33 0C28.6664 0 24.3752 0.874762 20.3714 2.57434C16.3677 4.27392 12.7298 6.76503 9.66548 9.90544C3.47678 16.2478 0 24.8499 0 33.8193C0 48.7674 9.471 61.4496 22.572 65.9476C24.222 66.2182 24.75 65.1698 24.75 64.2567V58.5412C15.609 60.5703 13.662 54.0094 13.662 54.0094C12.144 50.0864 9.999 49.038 9.999 49.038C6.996 46.9412 10.23 47.0088 10.23 47.0088C13.53 47.2455 15.279 50.4922 15.279 50.4922C18.15 55.6327 23.001 54.1109 24.882 53.2992C25.179 51.1009 26.037 49.6129 26.961 48.7674C19.635 47.9219 11.946 45.0135 11.946 32.1283C11.946 28.3744 13.2 25.3645 15.345 22.9633C15.015 22.1178 13.86 18.6006 15.675 14.035C15.675 14.035 18.447 13.1219 24.75 17.4846C27.357 16.7405 30.195 16.3685 33 16.3685C35.805 16.3685 38.643 16.7405 41.25 17.4846C47.553 13.1219 50.325 14.035 50.325 14.035C52.14 18.6006 50.985 22.1178 50.655 22.9633C52.8 25.3645 54.054 28.3744 54.054 32.1283C54.054 45.0473 46.332 47.8881 38.973 48.7336C40.161 49.782 41.25 51.845 41.25 54.9902V64.2567C41.25 65.1698 41.778 66.252 43.461 65.9476C56.562 61.4158 66 48.7674 66 33.8193C66 29.3781 65.1464 24.9804 63.488 20.8772C61.8296 16.7741 59.3989 13.0459 56.3345 9.90544C53.2702 6.76503 49.6323 4.27392 45.6286 2.57434C41.6248 0.874762 37.3336 0 33 0Z" fill="black"/>
@@ -59,46 +139,47 @@ const ContactForm = () => {
         </a>
       </div>
       <form onSubmit={handleSubmit} className="mt-6 p-6 text-left">
-        <label className="block text-white font-semibold">Name</label>
+        <label className="name block text-white font-semibold">Name</label>
         <input
           type="text"
           name="name"
           value={formData.name}
           onChange={handleChange}
-          placeholder="@ Your name"
-          className="w-full text-black px-3 py-2 mt-1 bg-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+          placeholder="Your name"
+          className="name w-full text-black px-3 py-2 mt-1 bg-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
           required
         />
 
-        <label className="block text-white font-semibold mt-4">Email</label>
+        <label className="email block text-white font-semibold mt-4">Email</label>
         <input
           type="email"
           name="email"
           value={formData.email}
           onChange={handleChange}
           placeholder="Your email"
-          className="w-full text-black px-3 py-2 mt-1 bg-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className="email w-full text-black px-3 py-2 mt-1 bg-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
           required
         />
 
-        <label className="block text-white font-semibold mt-4">Message</label>
+        <label className="message block text-white font-semibold mt-4">Message</label>
         <textarea
           name="message"
           value={formData.message}
           onChange={handleChange}
           placeholder="What's on your mind?"
-          className="w-full px-3 py-2 mt-1 text-black bg-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className="message w-full px-3 py-2 mt-1 text-black bg-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
           rows="4"
           required
-        ></textarea>
+        />
 
         <button
+          ref={submitRef}
           type="submit"
-          className="mt-4 px-6 py-3 bg-blue-500 rounded-lg hover:bg-blue-600 transition w-full"
+          className="mt-4 px-6 py-3 bg-blue-500 cursor-pointer rounded-lg hover:bg-blue-600 transition w-full disabled:bg-gray-600 disabled:cursor-progress"
+          disabled={isSending}
         >
-          Send Message
+          {isSending ? 'Sending...' : 'Send Message' } 
         </button>
-        {status && <p className="text-gray-700 mt-2">{status}</p>}
       </form>
     </section>
   );

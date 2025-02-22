@@ -1,6 +1,6 @@
 import {useRef, useEffect} from 'react';
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { FiDownload, FiExternalLink } from "react-icons/fi";
 import avatar from '/src/assets/avatar.jpeg'
 import greenIsland from '/src/assets/portfolios/green-island.png'
@@ -9,9 +9,12 @@ import emotionGallery from '/src/assets/portfolios/emotion-gallery.png'
 import netphlix from '/src/assets/portfolios/netphlix.png'
 import { gsap } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import * as Icon from "./components/icons/Icons";
 import Skills from './components/Skills';
 import ContactForm from './components/ContactForm';
+import Header from './components/Header';
+import GoTop from './components/GoTop'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
@@ -78,26 +81,121 @@ const Projects = [
 ]
 
 gsap.registerPlugin(TextPlugin);
+gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
   const textRef = useRef(null);
+  const heroRef = useRef(null);
+  const heroLeftRef = useRef(null)
+  const heroRightRef = useRef(null);
+  const aboutRef = useRef(null);
+  const aboutTitleRef = useRef(null);
+  const aboutDescRef = useRef(null);
+  const skillsRef = useRef(null);
+  const skillsTitleRef = useRef(null);
+  const projectsRef = useRef(null);
+  const projectsTitleRef = useRef(null);
+  const projectsContantRef = useRef(null);
+  const contactRef = useRef(null);
+  const contactTitleRef = useRef(null);
 
   useEffect(() => {
     gsap.to(textRef.current, {
-      duration: 4,
-      text: "Tech Lead | Full-Stack Developer | Creative Problem Solver",
+      duration: 2.5,
+      text: "Tech Lead | Full-Stack Developer",
       ease: "none",
       repeat: -1,
       yoyo: true,
       repeatDelay: 1,
     });
+
+    gsap.fromTo(
+      heroRightRef.current,
+      { opacity: 0, x: -100 },
+      { opacity: 1, x: 0, duration: 1, ease: "power2.out" }
+    )
+
+    const aboutTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: aboutTitleRef.current,
+        start: "bottom bottom",
+        end: "top top",
+        toggleActions: "play reverse play reverse", // 定義進入與離開的動作
+      },
+    });
+
+    aboutTl.fromTo(
+      aboutTitleRef.current,
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
+    );
+
+    aboutTl.fromTo(
+      aboutDescRef.current,
+      { opacity: 0, y: -50 },
+      { opacity: 1, y: 0, duration: 1, ease: "power2.out" },
+      0
+    )
+
+    const skillsTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: skillsRef.current,
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play reverse play reverse", // 定義進入與離開的動作
+      },
+    })
+
+    skillsTimeline.fromTo(
+      skillsTitleRef.current,
+      { opacity: 0, x: 100 },
+      { opacity: 1, x: 0, duration: 1, ease: "power2.out" },
+    )
+
+    const projectsTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: projectsRef.current,
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play reverse play reverse", // 定義進入與離開的動作
+      },
+    });
+
+    projectsTimeline.fromTo(
+      projectsTitleRef.current,
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
+    )
+    
+    projectsTimeline.fromTo(
+      projectsContantRef.current,
+      { opacity: 0, y: 100 },
+      { opacity: 1, y: 0, duration: 1, ease: "power2.out" },
+      0
+    )
+
+    const contactTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: contactRef.current,
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play reverse play reverse", // 定義進入與離開的動作
+      },
+    });
+
+    contactTimeline.fromTo(
+      contactTitleRef.current,
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
+    )
   }, []);
 
   return (
     <div className="bg-gradient-to-b from-sky-300 to-stone-700 text-white min-h-screen font-sans">
+      <Header />
       {/* Hero Section */}
-      <section className="h-screen flex flex-row justify-center items-center text-center px-4">
-        <div className="w-1/2 flex flex-col justify-center items-center">
+      <section ref={heroRef} className="h-screen flex flex-row justify-center items-center text-center px-[6rem]">
+        <div ref={heroLeftRef} className="w-1/2 flex flex-col justify-center items-center">
           <h1 className="text-2xl font-bold text-white">
             Hey there, I'm 
           </h1>
@@ -129,7 +227,7 @@ const App = () => {
             <FiDownload /> Download Resume
           </motion.a>
         </div>
-        <div className="w-1/2 flex justify-center">
+        <div ref={heroRightRef} className="w-1/2 flex justify-center">
           <motion.div
             className="w-[1/2] h-[400px] shadow-lg overflow-hidden solid border-2"
             animate={{ 
@@ -147,9 +245,9 @@ const App = () => {
       </section>
 
       {/* About Me */}
-      <section className="py-20 px-10 max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold text-white text-center">About Me</h2>
-        <p className="mt-4 text-xl text-white text-center">
+      <section ref={aboutRef} id="about" className="py-20 px-10 max-w-4xl mx-auto">
+        <h2 ref={aboutTitleRef} className="text-4xl font-bold text-white text-center">About Me<span>👨‍💻</span></h2>
+        <p ref={aboutDescRef} className="mt-4 text-xl text-white text-center max-w-3xl leading-relaxed">
           Hey, I’m Phil! 
           I’m an introverted yet ambitious backend developer who enjoys solving complex problems, writing clean code and occasionally overthinking life at sunset. <br/>
           Originally from Taiwan, now in Vancouver, expanding my skills in <strong>React</strong> and <strong>TypeScript</strong> while building cool projects. 
@@ -160,55 +258,58 @@ const App = () => {
       </section>
 
       {/* Skills */}
-      <section className="py-20 px-10 max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-white text-center">Skills</h2>
-        <Skills title="Frontend" skills={FrontendSkills} />
+      <section id="skills" ref={skillsRef} className="py-20 px-10 max-w-6xl mx-auto">
+        <h2 ref={skillsTitleRef} className="text-4xl font-bold text-white text-center">Skills</h2>
+        <Skills title="Frontend" skills={FrontendSkills} direction="left" />
         <Skills title="Backend" skills={BackendSkills} />
-        <Skills title="DevOps" skills={DevOpsSkills} />
+        <Skills title="DevOps" skills={DevOpsSkills} direction="left" />
         <Skills title="Others" skills={OtherSkills} />
       </section>
 
       {/* Projects */}
-      <section className="py-20 px-10 max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-white text-center">Projects</h2>
-        <Swiper 
-          spaceBetween={20} 
-          slidesPerView={1} 
-          loop={false} 
-          navigation={true}
-          modules={[Navigation]}
-          className="w-full max-w-4xl"
-        >
-          {Projects.map((project, index) => (
-            <SwiperSlide key={index} className="p-4">
-              <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-                <img src={project.image} alt={project.title} className="w-auto h-auto object-contain rounded-md mb-4" />
-                <h3 className="text-xl font-semibold text-white">{project.title}</h3>
-                <p className="mt-2 text-gray-400 h-[100px]">{project.description}</p>
-                <div className="flex justify-between mt-6">
-                  <a href={project.github} target="_blank" className="text-gray-300 hover:text-white flex items-center gap-2">
-                    <FaGithub size={30} /> GitHub
-                  </a>
-                  <div className="flex justify-center gap-4">
-                    {project.skills.map((SkillIcon, i) => (
-                      <SkillIcon key={i} className="text-3xl text-white" />
-                    ))}
+      <section id="projects" ref={projectsRef} className="py-20 px-10 max-w-6xl mx-auto">
+        <h2 ref={projectsTitleRef} className="text-4xl font-bold text-white text-center">Projects</h2>
+        <div ref={projectsContantRef}>
+          <Swiper 
+            spaceBetween={20} 
+            slidesPerView={1} 
+            loop={false} 
+            navigation={true}
+            modules={[Navigation]}
+            className="w-full max-w-4xl"
+          >
+            {Projects.map((project, index) => (
+              <SwiperSlide key={index} className="p-4">
+                <div className="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col">
+                  <img src={project.image} alt={project.title} className="w-auto h-[300px] object-contain rounded-md mb-4" />
+                  <h3 className="text-xl font-semibold text-white">{project.title}</h3>
+                  <p className="mt-2 text-gray-400 h-[100px]">{project.description}</p>
+                  <div className="flex justify-between mt-6">
+                    <a href={project.github} target="_blank" className="text-gray-300 hover:text-white flex items-center gap-2">
+                      <FaGithub size={30} /> GitHub
+                    </a>
+                    <div className="flex justify-center gap-4">
+                      {project.skills.map((SkillIcon, i) => (
+                        <SkillIcon key={i} className="text-3xl text-white" />
+                      ))}
+                    </div>
+                    <a href={project.website} target="_blank" className="text-gray-300 hover:text-white flex items-center gap-2">
+                      <FiExternalLink size={25} /> Live Demo
+                    </a>
                   </div>
-                  <a href={project.website} target="_blank" className="text-gray-300 hover:text-white flex items-center gap-2">
-                    <FiExternalLink size={25} /> Live Demo
-                  </a>
                 </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </section>
 
       {/* Contact */}
-      <section className="py-20 px-10 text-center">
-        <h2 className="text-4xl font-bold text-white">Contact Me</h2>
+      <section id="contact" ref={contactRef} className="py-20 px-10 text-center">
+        <h2 ref={contactTitleRef} className="text-4xl font-bold text-white">Contact Me</h2>
         <ContactForm />
       </section>
+      <GoTop />
     </div>
   );
 };
