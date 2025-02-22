@@ -4,3 +4,7 @@
 .swiper-button-prev {
   @apply !text-white;
 }
+
+html, body {
+  overflow-x: hidden;
+}

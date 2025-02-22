@@ -3,7 +3,7 @@ import IconModel from "./IconModel";
 const Size = 50;
 
 export function PHP({width=Size, height=Size}) {
-    return <IconModel title="PHP">
+    return <IconModel title="PHP" size={width}>
         <svg width={width} height={height} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0 7.99988C0 10.324 3.58175 12.2083 8 12.2083C12.4183 12.2083 16 10.324 16 7.99988C16 5.67575 12.4181 3.7915 8 3.7915C3.58187 3.7915 0 5.67575 0 7.99988Z" fill="url(#paint0_radial_125_7)"/>
             <path d="M8 11.8958C12.2456 11.8958 15.6875 10.1514 15.6875 7.99988C15.6875 5.84813 12.2456 4.104 8 4.104C3.75437 4.104 0.3125 5.84813 0.3125 7.99988C0.3125 10.1514 3.75437 11.8958 8 11.8958Z" fill="#777BB3"/>
@@ -26,7 +26,7 @@ export function PHP({width=Size, height=Size}) {
 }
 
 export function Golang({width=Size, height=Size}) {
-    return <IconModel title="golang">
+    return <IconModel title="golang" size={width}>
         <svg width={width} height={height} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_125_16)">
             <path d="M12.25 0H3.75C1.67893 0 0 1.67893 0 3.75V12.25C0 14.3211 1.67893 16 3.75 16H12.25C14.3211 16 16 14.3211 16 12.25V3.75C16 1.67893 14.3211 0 12.25 0Z" fill="#00B4E0"/>
@@ -43,7 +43,7 @@ export function Golang({width=Size, height=Size}) {
 }
 
 export function Laravel({width=Size, height=Size}) {
-    return <IconModel title="Laravel">
+    return <IconModel title="Laravel" size={width}>
         <svg width={width} height={height} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_125_21)">
             <path d="M12.25 0H3.75C1.67893 0 0 1.67893 0 3.75V12.25C0 14.3211 1.67893 16 3.75 16H12.25C14.3211 16 16 14.3211 16 12.25V3.75C16 1.67893 14.3211 0 12.25 0Z" fill="#F4F2ED"/>
@@ -59,7 +59,7 @@ export function Laravel({width=Size, height=Size}) {
 }
 
 export function React({width=Size, height=Size}) {
-    return <IconModel title="React.js">
+    return <IconModel title="React.js" size={width}>
         <svg width={width} height={height} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_127_152)">
             <path d="M12.25 0H3.75C1.67893 0 0 1.67893 0 3.75V12.25C0 14.3211 1.67893 16 3.75 16H12.25C14.3211 16 16 14.3211 16 12.25V3.75C16 1.67893 14.3211 0 12.25 0Z" fill="#F4F2ED"/>
@@ -78,7 +78,7 @@ export function React({width=Size, height=Size}) {
 }
 
 export function Docker({width=Size, height=Size}) {
-    return <IconModel title="Docker">
+    return <IconModel title="Docker" size={width}>
         <svg width={width} height={height} viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M25.2656 0H7.73438C3.4628 0 0 3.4628 0 7.73438V25.2656C0 29.5372 3.4628 33 7.73438 33H25.2656C29.5372 33 33 29.5372 33 25.2656V7.73438C33 3.4628 29.5372 0 25.2656 0Z" fill="#2396ED"/>
             <path d="M18.1999 15.7424H20.8704V13.3262H18.1999V15.7424ZM15.0208 15.7424H17.6912V13.3262H15.0208V15.7424ZM11.9051 15.7424H14.5757V13.3262H11.9051V15.7424ZM8.78947 15.7424H11.3966V13.3262H8.7896L8.78947 15.7424ZM5.61039 15.7424H8.28094V13.3262H5.61039V15.7424ZM8.7896 12.8175H11.3965V10.4014H8.7896V12.8175ZM11.9053 12.8175H14.5757V10.4014H11.9051L11.9053 12.8175ZM15.0208 12.8175H17.6912V10.4014H15.0208V12.8175ZM15.0208 9.89265H17.6912V7.47656H15.0208V9.89265ZM29.3906 14.6617C29.3906 14.6617 28.2461 13.5807 25.8935 13.9622C25.6392 12.1182 23.6681 11.0373 23.6681 11.0373C23.6681 11.0373 21.8242 13.2628 23.1594 15.7425C22.778 15.9333 22.1421 16.1877 21.1883 16.1877H3.70296C3.38495 17.3958 3.38495 25.4072 12.1595 25.4072C18.4542 25.4072 23.1594 22.4824 25.3849 17.1413C28.6912 17.3956 29.3906 14.6617 29.3906 14.6617Z" fill="white"/>
@@ -87,7 +87,7 @@ export function Docker({width=Size, height=Size}) {
 }
 
 export function Js({width=Size, height=Size}) {
-    return <IconModel title="Javascript">
+    return <IconModel title="Javascript" size={width}>
         <svg width={width} height={height} viewBox="0 0 35 33" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_30_172)">
             <path d="M26.7969 0H8.20312C3.67266 0 0 3.4628 0 7.73438V25.2656C0 29.5372 3.67266 33 8.20312 33H26.7969C31.3273 33 35 29.5372 35 25.2656V7.73438C35 3.4628 31.3273 0 26.7969 0Z" fill="#F0DB4F"/>
@@ -103,7 +103,7 @@ export function Js({width=Size, height=Size}) {
 }
 
 export function Ts({width=Size, height=Size}) {
-    return <IconModel title="Typescript">
+    return <IconModel title="Typescript" size={width}>
         <svg width={width} height={height} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_125_107)">
             <path d="M12.25 0H3.75C1.67893 0 0 1.67893 0 3.75V12.25C0 14.3211 1.67893 16 3.75 16H12.25C14.3211 16 16 14.3211 16 12.25V3.75C16 1.67893 14.3211 0 12.25 0Z" fill="#007ACC"/>
@@ -119,7 +119,7 @@ export function Ts({width=Size, height=Size}) {
 }
 
 export function Vue({width=Size, height=Size}) {
-    return <IconModel title="Vue.js">
+    return <IconModel title="Vue.js" size={width}>
         <svg width={width} height={height} viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0 0L16.5 33L33 0H26.4L16.5 19.8L6.5175 0H0Z" fill="#41B883"/>
         </svg>
@@ -127,7 +127,7 @@ export function Vue({width=Size, height=Size}) {
 }
 
 export function Next({width=Size, height=Size}) {
-    return <IconModel title="Next.js">
+    return <IconModel title="Next.js" size={width}>
         <svg width={width} height={height} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_125_56)">
             <path d="M12.25 0H3.75C1.67893 0 0 1.67893 0 3.75V12.25C0 14.3211 1.67893 16 3.75 16H12.25C14.3211 16 16 14.3211 16 12.25V3.75C16 1.67893 14.3211 0 12.25 0Z" fill="#F4F2ED"/>
@@ -143,7 +143,7 @@ export function Next({width=Size, height=Size}) {
 }
 
 export function MySQL({width=Size, height=Size}) {
-    return <IconModel title="MySQL">
+    return <IconModel title="MySQL" size={width}>
         <svg width={width} height={height} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_127_159)">
             <path d="M12.25 0H3.75C1.67893 0 0 1.67893 0 3.75V12.25C0 14.3211 1.67893 16 3.75 16H12.25C14.3211 16 16 14.3211 16 12.25V3.75C16 1.67893 14.3211 0 12.25 0Z" fill="#F4F2ED"/>
@@ -161,7 +161,7 @@ export function MySQL({width=Size, height=Size}) {
 }
 
 export function Redis({width=Size, height=Size}) {
-    return <IconModel title="Redis">
+    return <IconModel title="Redis" size={width}>
         <svg width={width} height={height} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_125_40)">
             <path d="M12.25 0H3.75C1.67893 0 0 1.67893 0 3.75V12.25C0 14.3211 1.67893 16 3.75 16H12.25C14.3211 16 16 14.3211 16 12.25V3.75C16 1.67893 14.3211 0 12.25 0Z" fill="#F4F2ED"/>
@@ -187,7 +187,7 @@ export function Redis({width=Size, height=Size}) {
 }
 
 export function Gitlab({width=Size, height=Size}) {
-    return <IconModel title="Gitlab CI/CD">
+    return <IconModel title="Gitlab CI/CD" size={width}>
         <svg width={width} height={height} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_128_2)">
             <path d="M12.25 0H3.75C1.67893 0 0 1.67893 0 3.75V12.25C0 14.3211 1.67893 16 3.75 16H12.25C14.3211 16 16 14.3211 16 12.25V3.75C16 1.67893 14.3211 0 12.25 0Z" fill="#F4F2ED"/>
@@ -209,7 +209,7 @@ export function Gitlab({width=Size, height=Size}) {
 }
 
 export function PostgreSQL({width=Size, height=Size}) {
-    return <IconModel title="PostgreSQL">
+    return <IconModel title="PostgreSQL" size={width}>
         <svg width={width} height={height} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_125_60)">
             <path d="M12.25 0H3.75C1.67893 0 0 1.67893 0 3.75V12.25C0 14.3211 1.67893 16 3.75 16H12.25C14.3211 16 16 14.3211 16 12.25V3.75C16 1.67893 14.3211 0 12.25 0Z" fill="#F4F2ED"/>
@@ -237,7 +237,7 @@ export function PostgreSQL({width=Size, height=Size}) {
 }
 
 export function TailwindCss({width=Size, height=Size}) {
-    return <IconModel title="Tailwindcss">
+    return <IconModel title="Tailwindcss" size={width}>
         <svg width={width} height={height} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_125_117)">
             <path d="M12.25 0H3.75C1.67893 0 0 1.67893 0 3.75V12.25C0 14.3211 1.67893 16 3.75 16H12.25C14.3211 16 16 14.3211 16 12.25V3.75C16 1.67893 14.3211 0 12.25 0Z" fill="#F4F2ED"/>
@@ -257,7 +257,7 @@ export function TailwindCss({width=Size, height=Size}) {
 }
 
 export function OpenAI({width=Size, height=Size}) {
-    return <IconModel title="OpenAI">
+    return <IconModel title="OpenAI" size={width}>
         <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_125_111)">
             <path d="M14.1 13.2999L7.99999 16.7999L3.79999 14.1999C2.99912 13.7622 2.37203 13.0637 2.02282 12.2205C1.6736 11.3772 1.62327 10.4399 1.88017 9.56413C2.13707 8.68833 2.68575 7.92673 3.43514 7.40574C4.18453 6.88475 5.08956 6.6357 5.99999 6.69994M12 14.4999L5.99999 10.9999V5.99994C5.93568 5.07114 6.19738 4.149 6.73998 3.39244C7.28258 2.63587 8.0721 2.09228 8.97247 1.85534C9.87284 1.6184 10.8277 1.70296 11.6724 2.09444C12.5171 2.48592 13.1988 3.1598 13.6 3.99994M9.89999 13.2999V6.19994L14.3 3.59994C15.0925 3.11304 16.03 2.91755 16.951 3.04711C17.8721 3.17667 18.7193 3.62318 19.3467 4.30983C19.9742 4.99648 20.3427 5.88033 20.3889 6.80933C20.4352 7.73833 20.1562 8.6544 19.6 9.39994M9.89999 10.6999L16 7.19994L20.2 9.79994C21.0009 10.2377 21.628 10.9361 21.9772 11.7794C22.3264 12.6226 22.3767 13.56 22.1198 14.4358C21.8629 15.3116 21.3142 16.0732 20.5648 16.5942C19.8155 17.1151 18.9104 17.3642 18 17.2999M12 9.49994L18 12.9999V17.9999C18.0643 18.9287 17.8026 19.8509 17.26 20.6075C16.7174 21.364 15.9279 21.9076 15.0275 22.1445C14.1272 22.3815 13.1723 22.2969 12.3276 21.9055C11.4829 21.514 10.8012 20.8401 10.4 19.9999M14.1 10.6999V17.7999L9.69999 20.3999C8.90747 20.8869 7.97002 21.0823 7.04894 20.9528C6.12786 20.8232 5.28072 20.3767 4.65327 19.6901C4.02582 19.0034 3.65728 18.1196 3.61105 17.1906C3.56482 16.2616 3.8438 15.3455 4.4 14.5999" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -272,7 +272,7 @@ export function OpenAI({width=Size, height=Size}) {
 }
 
 export function ThreeJs({width=Size, height=Size}) {
-    return <IconModel title="Three.js">
+    return <IconModel title="Three.js" size={width}>
         <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M8 22L3 3L22 8.5L8 22Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M12.573 17.5801L6.42102 16.0041L15.217 6.53809L17.131 13.1781" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -282,7 +282,7 @@ export function ThreeJs({width=Size, height=Size}) {
 }
 
 export function BootStrap({width=Size, height=Size}) {
-    return <IconModel title="Bootstrap">
+    return <IconModel title="Bootstrap" size={width}>
         <svg width={width} height={height} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1.87317 3.46404C1.84355 2.61216 2.50717 1.82666 3.4043 1.82666H12.5968C13.4939 1.82666 14.1575 2.61216 14.1279 3.46404C14.0994 4.28229 14.1364 5.34229 14.4032 6.20654C14.6708 7.07354 15.122 7.62141 15.8612 7.69191V8.49028C15.122 8.56078 14.6708 9.10866 14.4032 9.97566C14.1364 10.8399 14.0994 11.8999 14.1279 12.7182C14.1575 13.57 13.4939 14.3554 12.5968 14.3554H3.4043C2.50717 14.3554 1.84355 13.5699 1.87317 12.7182C1.90167 11.8999 1.86467 10.8399 1.5978 9.97566C1.3303 9.10879 0.877797 8.56078 0.138672 8.49028V7.69191C0.877797 7.62154 1.3303 7.07354 1.5978 6.20654C1.86467 5.34229 1.90155 4.28229 1.87317 3.46404Z" fill="url(#paint0_linear_125_132)"/>
             <g filter="url(#filter0_d_125_132)">
@@ -312,7 +312,7 @@ export function BootStrap({width=Size, height=Size}) {
 }
 
 export function Jest({width=Size, height=Size}) {
-    return <IconModel title="Jest">
+    return <IconModel title="Jest" size={width}>
         <svg width={width} height={height} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_125_139)">
             <path d="M12.25 0H3.75C1.67893 0 0 1.67893 0 3.75V12.25C0 14.3211 1.67893 16 3.75 16H12.25C14.3211 16 16 14.3211 16 12.25V3.75C16 1.67893 14.3211 0 12.25 0Z" fill="#99424F"/>
@@ -328,7 +328,7 @@ export function Jest({width=Size, height=Size}) {
 }
 
 export function Pest({width=Size, height=Size}) {
-    return <IconModel title="Pest">
+    return <IconModel title="Pest" size={width}>
         <svg width={width} height={height} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 228 204">
             <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="-966.0286" y1="129.8598" x2="-965.7107" y2="129.8598" gradientTransform="matrix(869.3333 52.7991 232.9371 -197.0489 809467.9375 76685.5547)">
                 <stop offset="0.1" stop-color="#ff45a6"/>
@@ -340,7 +340,7 @@ export function Pest({width=Size, height=Size}) {
 }
 
 export function Rpc({width=Size, height=Size}) {
-    return <IconModel title="RPC">
+    return <IconModel title="RPC" size={width}>
         <svg width={width} height={height} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_125_143)">
             <path d="M0 4.75C0 2.125 2.125 0 4.75 0H11.25C13.875 0 16 2.125 16 4.75V11.25C16 13.875 13.875 16 11.25 16H4.75C2.125 16 0 13.875 0 11.25V4.75Z" fill="#398CCB"/>
@@ -356,7 +356,7 @@ export function Rpc({width=Size, height=Size}) {
 }
 
 export function Grafana({width=Size, height=Size}) {
-    return <IconModel title="Grafana">
+    return <IconModel title="Grafana" size={width}>
         <svg width={width} height={height} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_125_89)">
             <path d="M12.25 0H3.75C1.67893 0 0 1.67893 0 3.75V12.25C0 14.3211 1.67893 16 3.75 16H12.25C14.3211 16 16 14.3211 16 12.25V3.75C16 1.67893 14.3211 0 12.25 0Z" fill="#F4F2ED"/>
@@ -376,7 +376,7 @@ export function Grafana({width=Size, height=Size}) {
 }
 
 export function Supabase({width=Size, height=Size}) {
-    return <IconModel title="Supabase">
+    return <IconModel title="Supabase" size={width}>
         <svg width={width} height={height} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_125_79)">
             <path d="M12.25 0H3.75C1.67893 0 0 1.67893 0 3.75V12.25C0 14.3211 1.67893 16 3.75 16H12.25C14.3211 16 16 14.3211 16 12.25V3.75C16 1.67893 14.3211 0 12.25 0Z" fill="#F4F2ED"/>
@@ -404,7 +404,7 @@ export function Supabase({width=Size, height=Size}) {
 }
 
 export function YouTrack({width=Size, height=Size}) {
-    return< IconModel title="YouTrack">
+    return< IconModel title="YouTrack" size={width}>
         <svg width={width} height={height} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_125_102)">
             <path d="M5.22565 6.1372C7.87227 3.72288 10.8125 1.03145 10.8976 0.946322C11.0302 0.811352 11.1722 0.686033 11.3226 0.571322C12.4394 -0.251741 13.9803 -0.178678 15.0143 0.746322C16.0481 1.67145 16.2915 3.19482 15.5971 4.39588C15.4714 4.61626 15.3158 4.81818 15.1347 4.99588C14.5473 5.58326 12.2975 7.97051 12.2975 7.97051C12.2975 7.97051 15.2471 10.8076 15.2971 10.8451C16.0282 11.4307 16.2149 12.4658 15.7346 13.2699C15.5924 13.5045 15.4017 13.7061 15.1755 13.8613C14.9492 14.0164 14.6924 14.1216 14.4223 14.1698C14.2599 14.1984 12.1151 12.1341 9.74652 10.4639C8.24915 12.1438 5.27015 15.4846 5.26084 15.4846C3.99596 16.3695 2.44865 15.8821 1.74871 15.4971C1.26985 15.2176 0.863648 14.829 0.563084 14.363C0.262519 13.897 0.0760575 13.3668 0.0188327 12.8152C-0.0383921 12.2637 0.0352323 11.7064 0.23373 11.1886C0.432228 10.6709 0.750007 10.2072 1.16127 9.83526C1.57377 9.46032 3.32352 7.87301 5.22334 6.1357L5.22565 6.1372Z" fill="#0CB0F2"/>
@@ -429,7 +429,7 @@ export function YouTrack({width=Size, height=Size}) {
 }
 
 export function Elastic({width=Size, height=Size}) {
-    return <IconModel title="Elastic">
+    return <IconModel title="Elastic" size={width}>
         <svg width={width} height={height} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_125_93)">
             <path d="M12.25 0H3.75C1.67893 0 0 1.67893 0 3.75V12.25C0 14.3211 1.67893 16 3.75 16H12.25C14.3211 16 16 14.3211 16 12.25V3.75C16 1.67893 14.3211 0 12.25 0Z" fill="#F4F2ED"/>
@@ -450,7 +450,7 @@ export function Elastic({width=Size, height=Size}) {
 }
 
 export function Render({width=Size, height=Size}) {
-    return <IconModel title="Render">
+    return <IconModel title="Render" size={width}>
         <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_125_77)">
             <path d="M18.2629 0.00703756C15.1419 -0.139962 12.5189 2.11604 12.0709 5.08904C12.0529 5.22704 12.0259 5.36104 12.0039 5.49404C11.3079 9.19704 8.06794 12.001 4.17694 12.001C2.83963 12.0037 1.52353 11.6669 0.351942 11.022C0.321035 11.0044 0.286024 10.9953 0.250451 10.9955C0.214878 10.9958 0.180004 11.0055 0.149358 11.0235C0.118711 11.0416 0.0933779 11.0674 0.0759209 11.0984C0.058464 11.1294 0.0495023 11.1645 0.0499422 11.2V24H11.9999V15.001C11.9999 13.345 13.3379 12.001 14.9869 12.001H17.9749C21.3569 12.001 24.0779 9.18404 23.9449 5.75704C23.8249 2.67304 21.3349 0.154038 18.2629 0.00703756Z" fill="black"/>
@@ -465,7 +465,7 @@ export function Render({width=Size, height=Size}) {
 }
 
 export function Git({width=Size, height=Size}) {
-    return <IconModel title="Git">
+    return <IconModel title="Git" size={width}>
         <svg width={width} height={height} viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M25.2656 0H7.73438C3.4628 0 0 3.4628 0 7.73438V25.2656C0 29.5372 3.4628 33 7.73438 33H25.2656C29.5372 33 33 29.5372 33 25.2656V7.73438C33 3.4628 29.5372 0 25.2656 0Z" fill="#F03C2E"/>
             <g mask="url(#mask0_2_87)">
@@ -476,7 +476,7 @@ export function Git({width=Size, height=Size}) {
 }
 
 export function JavaSpring({width=Size, height=Size}) {
-    return <IconModel title="JavaSpring">
+    return <IconModel title="JavaSpring" size={width}>
         <svg width={width} height={height} viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M5.02009 4.63373C11.5401 -1.69442 21.9651 -1.52433 28.2813 5.04197C28.9944 4.08937 29.6057 3.03474 30.0472 1.94602C32.1187 8.27417 33.3751 13.5817 32.8996 17.6983C32.6619 21.1685 31.3036 24.5027 29.0623 27.1565C23.2217 34.097 12.8304 34.9816 5.90296 29.1298L5.77045 29.0117L5.76336 29.007C5.7417 28.9919 5.7203 28.9761 5.69916 28.9596C5.636 28.9103 5.5786 28.8569 5.52695 28.7995L5.50838 28.7783L5.29183 28.5855C5.08042 28.404 4.86915 28.2226 4.68172 28.0172L4.61263 27.939C-1.70369 21.4066 -1.49977 10.9619 5.02009 4.63373ZM7.4649 26.7823C6.85363 26.306 5.97077 26.3739 5.49524 26.9864C5.07733 27.5249 5.07939 28.2738 5.50155 28.7706L5.50838 28.7783L5.77045 29.0117L5.7961 29.0292C6.38958 29.4203 7.18827 29.3395 7.64369 28.7867L7.6687 28.7556C8.1441 28.1432 8.04226 27.2586 7.46503 26.7822M29.8775 3.64703C28.1795 7.21941 23.9685 9.94122 20.3351 10.7918C16.9053 11.6083 13.917 10.9279 10.7589 12.1526C3.55986 14.9085 3.69573 23.482 7.63479 25.4213L7.87249 25.5575C7.87249 25.5575 10.7179 24.9906 13.5317 24.2421L13.7727 24.1775C14.8965 23.874 16.0021 23.5434 16.9053 23.2099C21.5915 21.4748 26.7533 17.188 28.4511 12.2207C27.5682 17.3921 23.1197 22.3933 18.6711 24.6729C16.2941 25.8976 14.4604 26.1698 10.5553 27.5307C10.0799 27.7008 9.70629 27.871 9.70629 27.871L9.84912 27.8517L9.94399 27.8394L10.0385 27.8275C10.9008 27.7203 11.6758 27.6669 11.6758 27.6669C17.211 27.3946 25.9043 29.2319 29.9453 23.8224C34.0882 18.3107 31.7791 9.39686 29.8775 3.64703Z" fill="#6DB33F"/>
         </svg>
@@ -484,7 +484,7 @@ export function JavaSpring({width=Size, height=Size}) {
 }
 
 export function Kubernetes({width=Size, height=Size}) {
-    return <IconModel title="Kubernetes">
+    return <IconModel title="Kubernetes" size={width}>
         <svg width={width} height={height} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_125_135)">
             <path d="M12.25 0H3.75C1.67893 0 0 1.67893 0 3.75V12.25C0 14.3211 1.67893 16 3.75 16H12.25C14.3211 16 16 14.3211 16 12.25V3.75C16 1.67893 14.3211 0 12.25 0Z" fill="#326CE5"/>

@@ -95,10 +95,7 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSending(true);
-
-    console.log(formData)
-    
+    setIsSending(true);    
 
     emailjs
       .send(
@@ -120,7 +117,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section ref={sectionRef} className="py-20 px-10 max-w-4xl mx-auto text-center">
+    <section ref={sectionRef} className="py-20 sm:px-10 px-0 max-w-4xl mx-auto text-center">
       <Toaster position="top-center" richColors />
       <h2 ref={suptitle1Ref} className="text-4xl font-bold text-white mb-6">Would you like to work Together?</h2>
       <p ref={suptitle2Ref} className="text-gray-300">Email: <strong>xuyuwei19940909@gmail.com</strong></p>

@@ -44,7 +44,7 @@ export default function Skills({title, skills, direction='right'}) {
 
     return <div ref={sectionRef}>
         <h3 ref={titleRef} className='text-2xl font-bold text-white text-center my-4'>{title}</h3>
-        <div ref={skillsRef} className="grid grid-cols-5 gap-6 my-6 text-gray-300 text-4xl flex flex-wrap justify-center">
+        <div ref={skillsRef} className="grid sm:grid-cols-5 grid-cols-3 gap-6 my-6 text-gray-300 text-4xl flex flex-wrap justify-center">
           {skills.map((Icon, index) => (
             <motion.div
               key={index}
