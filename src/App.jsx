@@ -1,4 +1,4 @@
-import {useRef, useEffect} from 'react';
+import {useRef, useEffect, useState} from 'react';
 import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 import { FiDownload, FiExternalLink } from "react-icons/fi";
@@ -17,6 +17,7 @@ import Header from './components/Header';
 import GoTop from './components/GoTop'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
+import BurgerMenu from './components/BurgerMenu.jsx';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
@@ -99,6 +100,9 @@ const App = () => {
   const projectsContantRef = useRef(null);
   const contactRef = useRef(null);
   const contactTitleRef = useRef(null);
+  const [projectInfo, setProjectInfo] = useState(Projects[0]);
+  const [menuOpen, setMenuOpen] = useState(false);
+
 
   useEffect(() => {
     gsap.to(textRef.current, {
@@ -200,11 +204,16 @@ const App = () => {
     )
   }, []);
 
+  const handleSwiperChange = (swiper) => {
+    setProjectInfo(Projects[swiper.activeIndex])
+  }
+
   return (
-    <div className="bg-gradient-to-b from-sky-300 to-stone-700 text-white  font-sans pt-[10rem] lg:pt-0">
-      <Header />
+    <div className="bg-gradient-to-b from-sky-300 to-stone-700 text-white font-sans lg:pt-0 pt-[5rem] text-nunito">
+      <Header setMenuOpen={setMenuOpen} />
+      <BurgerMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       {/* Hero Section */}
-      <section ref={heroRef} className="sm:h-screen h-auto flex flex-col lg:flex-row justify-center items-center text-center sm:px-[6rem] px-[2rem]">
+      <section ref={heroRef} className="sm:h-screen h-auto flex flex-col lg:flex-row justify-center items-center text-center md:px-[6rem] px-[2rem]">
         <div ref={heroLeftRef} className="lg:w-1/2 w-full flex flex-col justify-center items-center">
           <h1 className="text-2xl font-bold text-white">
             Hey there, I'm 
@@ -271,7 +280,7 @@ const App = () => {
       </section>
 
       {/* About Me */}
-      <section ref={aboutRef} id="about" className="py-20 px-10 max-w-4xl mx-auto">
+      <section ref={aboutRef} id="about" className="pt-20 px-10 max-w-4xl mx-auto">
         <h2 ref={aboutTitleRef} className="text-4xl font-bold text-white text-center">About Me<span>👨‍💻</span></h2>
         <p ref={aboutDescRef} className="mt-4 sm:text-xl text-white text-center max-w-3xl leading-relaxed">
           Hey, I’m Phil! 
@@ -284,7 +293,7 @@ const App = () => {
       </section>
 
       {/* Skills */}
-      <section id="skills" ref={skillsRef} className="py-20 px-10 max-w-6xl mx-auto">
+      <section id="skills" ref={skillsRef} className="pt-20 px-10 max-w-6xl mx-auto">
         <h2 ref={skillsTitleRef} className="text-4xl font-bold text-white text-center">Skills</h2>
         <Skills title="Frontend" skills={FrontendSkills} direction="left" />
         <Skills title="Backend" skills={BackendSkills} />
@@ -296,46 +305,54 @@ const App = () => {
       <section id="projects" ref={projectsRef} className="py-20 px-10 max-w-6xl mx-auto">
         <h2 ref={projectsTitleRef} className="text-4xl font-bold text-white text-center">Projects</h2>
         <div ref={projectsContantRef}>
-          <Swiper 
-            spaceBetween={20} 
-            slidesPerView={1} 
-            loop={false} 
-            navigation={true}
-            modules={[Navigation]}
-            className="w-full max-w-4xl"
-          >
-            {Projects.map((project, index) => (
-              <SwiperSlide key={index} className="p-4">
-                <div className="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col">
-                  <img src={project.image} alt={project.title} className="sm:w-auto sm:h-[300px] h-auto object-contain rounded-md mb-4" />
-                  <h3 className="text-xl font-semibold text-white">{project.title}</h3>
-                  <p className="mt-2 text-gray-400 md:h-[100px]  h-[15rem]">{project.description}</p>
-                  <div className="flex justify-between mt-6">
-                    <a href={project.github} target="_blank" className="text-gray-300 hover:text-white flex items-center gap-2">
-                      <FaGithub size={30} /> <span className='hidden md:block'>GitHub</span> 
-                    </a>
-                    <div className="flex justify-center gap-4">
-                      {project.skills.map((SkillIcon, i) => (
-                        <SkillIcon key={i} width={30} height={30} className="text-3xl text-white" />
-                      ))}
-                    </div>
-                    <a href={project.website} target="_blank" className="text-gray-300 hover:text-white flex items-center gap-2">
-                      <FiExternalLink size={25} /> <span className='hidden md:block'>Live Demo</span> 
-                    </a>
-                  </div>
+          <div className="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col my-4">
+            <Swiper 
+              spaceBetween={20} 
+              slidesPerView={1} 
+              loop={false} 
+              navigation={true}
+              modules={[Navigation]}
+              className="w-full max-w-4xl"
+              onSlideChange={(swiper) => handleSwiperChange(swiper)}
+            >
+              {Projects.map((project, index) => (
+                <SwiperSlide key={index} className="sm:p-4 p-0 flex!  justify-center items-center">
+                    <img src={project.image} alt={project.title} className="sm:w-auto sm:h-[300px] h-auto object-contain rounded-md mb-4" />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+              <h3 className="text-2xl font-semibold text-white text-center">{projectInfo.title}</h3>
+              <p className="mt-2 text-gray-400 h-auto">{projectInfo.description}</p>
+              <div className="flex justify-between mt-6 gap-2">
+                <a href={projectInfo.github} target="_blank" className="text-gray-300 hover:text-white flex items-center gap-2">
+                  <FaGithub size={30} /> <span className='hidden md:block'>GitHub</span> 
+                </a>
+                <div className="flex flex-wrap justify-center gap-4 p-1 rounded-md">
+                  {projectInfo.skills.map((SkillIcon, i) => (
+                    <SkillIcon key={i} width={30} height={30} className="text-3xl text-white" />
+                  ))}
                 </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+                <a href={projectInfo.website} target="_blank" className="text-gray-300 hover:text-white flex items-center gap-2">
+                  <FiExternalLink size={25} /> <span className='hidden md:block'>Live Demo</span> 
+                </a>
+              </div>
+              
+          </div>
         </div>
       </section>
 
       {/* Contact */}
-      <section id="contact" ref={contactRef} className="py-20 sm:px-10 px-1 text-center">
+      <section id="contact" ref={contactRef} className="pt-20 sm:px-10 px-1 text-center">
         <h2 ref={contactTitleRef} className="text-4xl font-bold text-white">Contact Me</h2>
         <ContactForm />
       </section>
       <GoTop />
+      <footer className="w-full bg-gray-800 text-white py-4">
+        <div className="max-w-6xl mx-auto text-center">
+            <p>&copy; all rights reserved.</p>
+            <p>Created by Phil</p>
+        </div>
+      </footer>
     </div>
   );
 };
