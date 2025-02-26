@@ -3,6 +3,7 @@ import emailjs from "@emailjs/browser";
 import { Toaster, toast } from 'sonner'
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SlotText from './SlotText.jsx';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,6 +14,7 @@ const ContactForm = () => {
   const suptitle3Ref = useRef(null);
   const iconsRef = useRef(null);
   const submitRef = useRef(null);
+  const [isShowSlot, setIsShowSlot] = useState(false)
 
   const [formData, setFormData] = useState({
     name: "",
@@ -30,6 +32,8 @@ const ContactForm = () => {
         end: "+=700",
         toggleActions: "play reverse play reverse",
       },
+      onStart: () => setIsShowSlot(true),
+      onReverseComplete: () => setIsShowSlot(false)
     })
 
     tl.fromTo(
@@ -117,9 +121,44 @@ const ContactForm = () => {
   };
 
   return (
-    <section ref={sectionRef} className="pt-20 pb-4 sm:px-10 px-0 max-w-4xl mx-auto text-center">
+    <section ref={sectionRef} className="pt-10 pb-4 sm:px-10 px-0 max-w-4xl mx-auto text-center">
       <Toaster position="top-center" richColors />
-      <h2 ref={suptitle1Ref} className="text-4xl font-bold text-white mb-6">Would you like to work Together?</h2>
+      <h2 ref={suptitle1Ref} className="sm:hidden text-4xl font-bold text-white mb-6">Would you like to work Together?</h2>
+      {isShowSlot && <div className="sm:flex hidden justify-center mb-6">
+        <SlotText targetLetter="W" step={1} width={38.5} isUpperCase={true}/>
+        <SlotText targetLetter="o" step={2}/>
+        <SlotText targetLetter="u" step={3}/>
+        <SlotText targetLetter="l" step={4} width={13}/>
+        <SlotText targetLetter="d" step={5}/>
+        <SlotText targetLetter=" " step={6} width={10}/>
+        <SlotText targetLetter="y" step={7} />
+        <SlotText targetLetter="o" step={8} />
+        <SlotText targetLetter="u" step={9} />
+        <SlotText targetLetter=" " step={10} width={10}/>
+        <SlotText targetLetter="l" step={11} width={13}/>
+        <SlotText targetLetter="i" step={9} width={13}/>
+        <SlotText targetLetter="k" step={4} />
+        <SlotText targetLetter="e" step={7} />
+        <SlotText targetLetter=" " step={1} width={10}/>
+        <SlotText targetLetter="t" step={6} />
+        <SlotText targetLetter="o" step={2} />
+        <SlotText targetLetter=" " step={5} width={10}/>
+        <SlotText targetLetter="w" step={7} width={30}/>
+        <SlotText targetLetter="o" step={3} />
+        <SlotText targetLetter="r" step={10} width={13}/>
+        <SlotText targetLetter="k" step={6} />
+        <SlotText targetLetter=" " step={8} width={10}/>
+        <SlotText targetLetter="T" step={1} width={21} isUpperCase={true}/>
+        <SlotText targetLetter="o" step={3} />
+        <SlotText targetLetter="g" step={8} />
+        <SlotText targetLetter="e" step={4} />
+        <SlotText targetLetter="t" step={2} width={14}/>
+        <SlotText targetLetter="h" step={7} />
+        <SlotText targetLetter="e" step={5} />
+        <SlotText targetLetter="r" step={8} width={13}/>
+        <SlotText targetLetter="?" step={1} />
+      </div>}
+      
       <p ref={suptitle2Ref} className="text-gray-300">Email: <strong>xuyuwei19940909@gmail.com</strong></p>
       <p ref={suptitle3Ref} className="text-gray-300">Call: <strong>+1 236-867-7624</strong></p>
       <div ref={iconsRef} className="flex justify-center gap-6 text-3xl mt-4">
