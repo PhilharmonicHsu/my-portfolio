@@ -12,9 +12,9 @@ export default function SlotText({targetLetter, step, isUpperCase=false, width=2
 
     useEffect(() => {
         gsap.to(textRef.current, {
-            duration: 1.5,      // 根據需要調整動畫時間
-            y: "-100%",      // 讓元素垂直移動到 -1100% 的位置
-            ease: "power2.out", // 選擇適合的 easing 效果
+            duration: 2,
+            y: "-100%",
+            ease: "power2.out",
             delay: step * 0.05
         });
     }, []);
@@ -27,6 +27,17 @@ export default function SlotText({targetLetter, step, isUpperCase=false, width=2
         return chars[Math.floor(Math.random() * chars.length)];
     }
 
+    const letterStyle = (position) => {
+        return {
+            translate: 'none', 
+            rotate: 'none', 
+            scale: 'none', 
+            opacity: 1, 
+            visibility: 'inherit', 
+            transform: `translate(0%, ${position}%)`
+        }
+    }
+
     return <div 
         className="mask" 
         style={{ 
@@ -37,27 +48,26 @@ export default function SlotText({targetLetter, step, isUpperCase=false, width=2
         }}
     >
         <div ref={textRef} className="slotText text-4xl mt-[40px]">
-            <div class="originalText" aria-hidden="true" 
-                style={{translate: 'none', rotate: 'none', scale: 'none', opacity: 1, visibility: 'inherit', transform: 'translate(0%, -1200%)'}}
+            <div class="originalText" 
+                aria-hidden="true" 
+                style={letterStyle(-1200)}
             >
                 &nbsp;
             </div>
-            {letters.map(letter => {
+            {letters.map(_ => {
                 startPosition += 20;
 
-                return <div aria-hidden="true" 
-                    style={{translate: 'none', rotate: 'none', scale: 'none', opacity: 1, visibility: 'inherit', transform: `translate(0%, ${startPosition}%)`}}
-                >
+                return <div aria-hidden="true" style={letterStyle(startPosition)}>
                     {targetLetter === ' ' ? '' : randomLetter()}
                 </div>
             })}
             <div className="text-center"
-                style={{translate: 'none', rotate: 'none', scale: 'none', opacity: 1, visibility: 'inherit', transform: 'translate(0%, 100%)'}}
+                style={letterStyle(100)}
             >
                 {targetLetter}
             </div>
             <div 
-                style={{translate: 'none', rotate: 'none', scale: 'none', opacity: 1, visibility: 'inherit', transform: 'translate(0%, 200%)'}}
+                style={letterStyle(200)}
             >-</div>
         </div>
     </div>

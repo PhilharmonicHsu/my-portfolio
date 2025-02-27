@@ -10,6 +10,7 @@ export default function GoTop() {
         setShowButton(window.scrollY > 300);
       };
       window.addEventListener("scroll", handleScroll);
+      
       return () => window.removeEventListener("scroll", handleScroll);
     }, []);
   

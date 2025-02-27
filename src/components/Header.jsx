@@ -1,18 +1,19 @@
 import {useState, useEffect} from 'react';
 import { motion } from "framer-motion";
 import RotationIcon from './RotationIcon';
-import {scrollToSection} from '../utils/common'
+import {scrollToSection} from '@utils/common'
 
 export default function Header({setMenuOpen}) {
     const [scrollY, setScrollY] = useState(0);
 
     useEffect(() => {
-        const handleScroll = () => {
-          setScrollY(window.scrollY);
-        };
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-      }, []);
+      const handleScroll = () => {
+        setScrollY(window.scrollY);
+      };
+      window.addEventListener("scroll", handleScroll);
+      
+      return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     return <motion.header
       className="fixed top-0 left-0 w-full z-50 py-3 backdrop-blur-md transition-all duration-300"
@@ -32,6 +33,5 @@ export default function Header({setMenuOpen}) {
           </svg>
         </button>
       </div>
-      
     </motion.header>
 }
