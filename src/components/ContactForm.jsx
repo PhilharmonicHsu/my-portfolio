@@ -159,8 +159,8 @@ const ContactForm = () => {
         <SlotText targetLetter="?" step={1} />
       </div>}
       
-      <p ref={suptitle2Ref} className="text-gray-300">Email: <strong>xuyuwei19940909@gmail.com</strong></p>
-      <p ref={suptitle3Ref} className="text-gray-300">Call: <strong>+1 236-867-7624</strong></p>
+      <p ref={suptitle2Ref} className="text-white">Email: <strong>xuyuwei19940909@gmail.com</strong></p>
+      <p ref={suptitle3Ref} className="text-white">Call: <strong>+1 236-867-7624</strong></p>
       <div ref={iconsRef} className="flex justify-center gap-6 text-3xl mt-4">
         <a href="https://github.com/PhilharmonicHsu" target="_blank" className="text-gray-300 hover:text-pink-400">
           <svg width="50" height="50" viewBox="0 0 66 66" fill="none" xmlns="http://www.w3.org/2000/svg">

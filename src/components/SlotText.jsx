@@ -48,16 +48,16 @@ export default function SlotText({targetLetter, step, isUpperCase=false, width=2
         }}
     >
         <div ref={textRef} className="slotText text-4xl mt-[40px]">
-            <div class="originalText" 
+            <div className="originalText" 
                 aria-hidden="true" 
                 style={letterStyle(-1200)}
             >
                 &nbsp;
             </div>
-            {letters.map(_ => {
+            {letters.map((_, index) => {
                 startPosition += 20;
 
-                return <div aria-hidden="true" style={letterStyle(startPosition)}>
+                return <div key={index} aria-hidden="true" style={letterStyle(startPosition)}>
                     {targetLetter === ' ' ? '' : randomLetter()}
                 </div>
             })}

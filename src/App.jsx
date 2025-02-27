@@ -8,22 +8,26 @@ import ProjectSection from '@components/sections/ProjectSection.jsx';
 import GoTop from '@components/GoTop'
 import ContactSection from '@components/sections/ContactSection.jsx';
 import Footer from '@components/Footer.jsx';
+import React, { useRef, useEffect } from 'react';
+import VantaBackground from '@components/VantaBackground';
 
 const App = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="bg-gradient-to-b from-sky-300 to-stone-700 text-white font-sans lg:pt-0 pt-[5rem] text-nunito">
-      <Header setMenuOpen={setMenuOpen} />
-      <BurgerMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      <HeroSection />
-      <AboutSection />
-      <SkillSection />
-      <ProjectSection />
-      <ContactSection />
-      <GoTop />
-      <Footer />
-    </div>
+    <VantaBackground>
+      <div className="text-white font-sans lg:pt-0 pt-[5rem] text-nunito">
+        <Header setMenuOpen={setMenuOpen} />
+        <BurgerMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+        <HeroSection />
+        <AboutSection />
+        <SkillSection />
+        <ProjectSection />
+        <ContactSection />
+        <GoTop />
+        <Footer />
+      </div>
+    </VantaBackground>
   );
 };
 

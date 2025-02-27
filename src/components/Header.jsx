@@ -27,9 +27,9 @@ export default function Header({setMenuOpen}) {
           <button onClick={() => scrollToSection("projects")} className="cursor-pointer">Projects</button>
           <button onClick={() => scrollToSection("contact")} className="cursor-pointer">Contact Me</button>
         </nav>
-        <button class="md:hidden btn btn-square btn-ghost cursor-pointer" onClick={() => setMenuOpen(true)}>
+        <button className="md:hidden btn btn-square btn-ghost cursor-pointer" onClick={() => setMenuOpen(true)}>
           <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 6H21M3 12H21M3 18H21" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3 6H21M3 12H21M3 18H21" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </button>
       </div>

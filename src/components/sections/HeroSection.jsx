@@ -1,8 +1,11 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from "gsap";
+import { TextPlugin } from 'gsap/all';
 import { motion } from "framer-motion";
 import { FiDownload } from "react-icons/fi";
 import avatar from '@assets/avatar.jpeg'
+
+gsap.registerPlugin(TextPlugin);
 
 export default function HeroSection() {
     const jobTitle1 = useRef(null);
