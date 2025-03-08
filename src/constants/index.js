@@ -5,7 +5,7 @@ import netphlix from '/src/assets/portfolios/netphlix.png'
 import * as Icon from "../components/icons/Icons";
 
 export const FrontendSkills = [
-  Icon.Js, Icon.Ts, Icon.BootStrap, Icon.Jest, Icon.Next, Icon.React, Icon.Vue, Icon.TailwindCss, Icon.ThreeJs
+  Icon.Js, Icon.Ts, Icon.BootStrap, Icon.Jest, Icon.Next, Icon.React, Icon.Vue, Icon.Alpine, Icon.Svelte, Icon.TailwindCss, Icon.ThreeJs
 ]
 
 export const BackendSkills = [
