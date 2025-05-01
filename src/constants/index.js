@@ -41,7 +41,7 @@ export const Projects = [
     skills: [
       Icon.React, Icon.TailwindCss, Icon.ExpressJs, Icon.MongoDB, Icon.SocketIO
     ],
-    github: 'https://github.com/PhilharmonicHsu/OnlinePongGame',
+    github: 'git@github.com:PhilharmonicHsu/online-pong-game.git',
     website: 'https://nodejs-final-project-pong-game-front.onrender.com/'
   },
   {
