@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import { TextPlugin } from 'gsap/all';
 import { motion } from "framer-motion";
 import { FiDownload } from "react-icons/fi";
-import avatar from '@assets/avatar.jpeg'
+import avatar from '@assets/avatar.jpg'
 
 gsap.registerPlugin(TextPlugin);
 

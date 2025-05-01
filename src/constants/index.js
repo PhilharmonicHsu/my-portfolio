@@ -3,6 +3,7 @@ import cartoonist from '/src/assets/portfolios/cartoonist.png'
 import emotionGallery from '/src/assets/portfolios/emotion-gallery.png'
 import netphlix from '/src/assets/portfolios/netphlix.png'
 import mangaNoodleShop from '/src/assets/portfolios/manga-noodle-shop.png'
+import pongGame from '/src/assets/portfolios/online-pong-game.png'
 import * as Icon from "../components/icons/Icons";
 
 export const FrontendSkills = [
@@ -10,7 +11,8 @@ export const FrontendSkills = [
 ]
 
 export const BackendSkills = [
-  Icon.PHP, Icon.Laravel, Icon.Golang, Icon.MySQL, Icon.PostgreSQL, Icon.MongoDB, Icon.Redis, Icon.GraphQL, Icon.Pest, Icon.Rpc, Icon.JavaSpring, Icon.OpenAI
+  Icon.PHP, Icon.Laravel, Icon.Golang, Icon.MySQL, Icon.PostgreSQL, Icon.MongoDB, Icon.Redis, Icon.GraphQL, Icon.Pest, Icon.Rpc, Icon.JavaSpring, Icon.OpenAI,
+  Icon.SocketIO
 ]
 
 export const DevOpsSkills = [
@@ -31,6 +33,16 @@ export const Projects = [
     ],
     github: 'https://github.com/PhilharmonicHsu/MangaNoodleShop',
     website: 'https://manga-noodle-shop.vercel.app/'
+  },
+  {
+    title: 'Online Pong Game',
+    image: pongGame,
+    description: `This game is an online multiplayer Pong game built with WebSocket, React, and Node.js. Challenge your friends in real-time and relive the retro arcade vibes — now in the browser!`,
+    skills: [
+      Icon.React, Icon.TailwindCss, Icon.ExpressJs, Icon.MongoDB, Icon.SocketIO
+    ],
+    github: 'https://github.com/PhilharmonicHsu/OnlinePongGame',
+    website: 'https://nodejs-final-project-pong-game-front.onrender.com/'
   },
   {
     title: 'Green Island',
