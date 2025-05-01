@@ -2,14 +2,15 @@ import greenIsland from '/src/assets/portfolios/green-island.png'
 import cartoonist from '/src/assets/portfolios/cartoonist.png'
 import emotionGallery from '/src/assets/portfolios/emotion-gallery.png'
 import netphlix from '/src/assets/portfolios/netphlix.png'
+import mangaNoodleShop from '/src/assets/portfolios/manga-noodle-shop.png'
 import * as Icon from "../components/icons/Icons";
 
 export const FrontendSkills = [
-  Icon.Js, Icon.Ts, Icon.BootStrap, Icon.Jest, Icon.Next, Icon.React, Icon.Vue, Icon.Alpine, Icon.Svelte, Icon.TailwindCss, Icon.ThreeJs
+  Icon.Js, Icon.Ts, Icon.BootStrap, Icon.Jest, Icon.Next, Icon.ExpressJs, Icon.React, Icon.Vue, Icon.Alpine, Icon.Svelte, Icon.TailwindCss, Icon.ThreeJs
 ]
 
 export const BackendSkills = [
-  Icon.PHP, Icon.Laravel, Icon.Golang, Icon.MySQL, Icon.PostgreSQL, Icon.Redis, Icon.Pest, Icon.Rpc, Icon.JavaSpring, Icon.OpenAI
+  Icon.PHP, Icon.Laravel, Icon.Golang, Icon.MySQL, Icon.PostgreSQL, Icon.MongoDB, Icon.Redis, Icon.GraphQL, Icon.Pest, Icon.Rpc, Icon.JavaSpring, Icon.OpenAI
 ]
 
 export const DevOpsSkills = [
@@ -21,6 +22,16 @@ export const OtherSkills = [
 ]
 
 export const Projects = [
+  {
+    title: 'Manga Noodle Shop',
+    image: mangaNoodleShop,
+    description: "Manga Noodle Shop is a comic-style ramen ordering web app for hungry anime fans and full-stack developers alike! From spicy tonkotsu to expressive UI transitions, we've cooked up both flavor and functionality.",
+    skills: [
+      Icon.React, Icon.TailwindCss, Icon.ExpressJs, Icon.MongoDB, Icon.GraphQL, Icon.Kubernetes
+    ],
+    github: 'https://github.com/PhilharmonicHsu/MangaNoodleShop',
+    website: 'https://manga-noodle-shop.vercel.app/'
+  },
   {
     title: 'Green Island',
     image: greenIsland,

@@ -11,9 +11,10 @@ export default function VantaBackground({children}) {
             THREE: THREE,
             mouseControls: false,
             touchControls: false,
-            highlightColor: 0xa9a9dc,
+            highlightColor: 0xffc300,
             midtoneColor: 0x928cb3,
-            lowlightColor: 0xff9bed
+            lowlightColor: 0xff9bed,
+            baseColor: 0x9b9b9b
           });
           
           return () => {
