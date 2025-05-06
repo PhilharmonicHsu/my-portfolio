@@ -1,0 +1,7 @@
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Phil Xu's Portfolio",
+    "url": "https://phil-ips.vercel.app",
+    "description": "The personal website of Phil Xu, a full-stack engineer specializing in backend development and modern web technologies."
+}

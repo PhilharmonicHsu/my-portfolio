@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import RotationIcon from './RotationIcon';
 import {scrollToSection} from '@utils/common'
 import personSchema from '@lib/person-schema.json'
+import websiteSchema from '@lib/website-schema.json'
+import softwareSourceCodeSchema from '@lib/software-source-code-schema.json'
 
 export default function Header({setMenuOpen}) {
     const [scrollY, setScrollY] = useState(0);
@@ -25,6 +27,18 @@ export default function Header({setMenuOpen}) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(personSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(websiteSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(softwareSourceCodeSchema),
         }}
       />
       </head>

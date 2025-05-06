@@ -1,0 +1,13 @@
+{
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "Green Island",
+    "codeRepository": "https://github.com/PhilharmonicHsu/green-island",
+    "programmingLanguage": "TypeScript",
+    "runtimePlatform": "NEXT.js",
+    "author": {
+      "@type": "Person",
+      "name": "Phil Xu"
+    },
+    "description": "Green Island is a modern real-time chat and video call platform that prioritizes privacy and security. Imagine stepping onto a secluded island where conversations disappear once you leave—just like a peaceful getaway."
+}
