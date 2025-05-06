@@ -23,12 +23,27 @@ export default function Header({setMenuOpen}) {
       style={{ backgroundColor: `rgba(68, 64, 60, ${Math.max(0.9 - (scrollY / 300), 0)})` }}
     >
       <head>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(personSchema),
-        }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "name": "Phil Xu",
+          "url": "https://phil-ips.vercel.app",
+          "image": "https://phil-ips.vercel.app/assets/avatar-CQKWS4uI.jpg",
+          "jobTitle": "Full-Stack Software Engineer",
+          "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "CICCC - Cornerstone International Community College of Canada"
+          },
+          "knowsAbout": [
+            "Laravel", "TypeScript", "WebSocket", "React", "Golang"
+          ],
+          "sameAs": [
+            "https://github.com/PhilharmonicHsu",
+            "https://www.linkedin.com/in/yuwei-hsu-280432327/"
+          ]
+        })
+      }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
