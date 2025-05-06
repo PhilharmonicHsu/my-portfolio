@@ -1,0 +1,13 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Phil Xu",
+    "url": "https://phil-ips.vercel.app/",
+    "image": "https://phil-ips.vercel.app/assets/avatar-CQKWS4uI.jpg",
+    "jobTitle": "Full-Stack Software Engineer",
+    "sameAs": [
+      "https://github.com/PhilharmonicHsu",
+      "https://www.linkedin.com/in/yuwei-hsu-280432327/"
+    ]
+  }
+  

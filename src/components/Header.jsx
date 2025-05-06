@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react';
 import { motion } from "framer-motion";
 import RotationIcon from './RotationIcon';
 import {scrollToSection} from '@utils/common'
+import personSchema from '@lib/person-schema.json'
 
 export default function Header({setMenuOpen}) {
     const [scrollY, setScrollY] = useState(0);
@@ -19,6 +20,14 @@ export default function Header({setMenuOpen}) {
       className="fixed top-0 left-0 w-full z-50 py-3 backdrop-blur-md transition-all duration-300"
       style={{ backgroundColor: `rgba(68, 64, 60, ${Math.max(0.9 - (scrollY / 300), 0)})` }}
     >
+      <head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(personSchema),
+        }}
+      />
+      </head>
       <div className="flex justify-between items-center px-6">
         <RotationIcon />
         <nav className="md:flex hidden gap-6">
