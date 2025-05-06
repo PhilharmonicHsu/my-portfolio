@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import { Helmet } from 'react-helmet';
 import { motion } from "framer-motion";
 import RotationIcon from './RotationIcon';
 import {scrollToSection} from '@utils/common'
@@ -22,41 +23,26 @@ export default function Header({setMenuOpen}) {
       className="fixed top-0 left-0 w-full z-50 py-3 backdrop-blur-md transition-all duration-300"
       style={{ backgroundColor: `rgba(68, 64, 60, ${Math.max(0.9 - (scrollY / 300), 0)})` }}
     >
-      <head>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{
-        __html: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Person",
-          "name": "Phil Xu",
-          "url": "https://phil-ips.vercel.app",
-          "image": "https://phil-ips.vercel.app/assets/avatar-CQKWS4uI.jpg",
-          "jobTitle": "Full-Stack Software Engineer",
-          "alumniOf": {
-            "@type": "CollegeOrUniversity",
-            "name": "CICCC - Cornerstone International Community College of Canada"
-          },
-          "knowsAbout": [
-            "Laravel", "TypeScript", "WebSocket", "React", "Golang"
-          ],
-          "sameAs": [
-            "https://github.com/PhilharmonicHsu",
-            "https://www.linkedin.com/in/yuwei-hsu-280432327/"
-          ]
-        })
-      }} />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(websiteSchema),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(softwareSourceCodeSchema),
-        }}
-      />
-      </head>
+      <Helmet>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(softwareSourceCodeSchema),
+          }}
+        />
+      </Helmet>
       <div className="flex justify-between items-center px-6">
         <RotationIcon />
         <nav className="md:flex hidden gap-6">
