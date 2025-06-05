@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { FaGithub } from "react-icons/fa";
-import { FiExternalLink } from "react-icons/fi";
+import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
+import { FiExternalLink } from "@react-icons/all-files/fi/FiExternalLink";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -60,14 +60,22 @@ export default function ProjectSection() {
                 >
                 {Projects.map((project, index) => (
                     <SwiperSlide key={index} className="sm:p-4 p-0 flex!  justify-center items-center">
-                        <img src={project.image} alt={project.title} className="sm:w-auto sm:h-[300px] h-auto object-contain rounded-md mb-4" />
+                        <div className='relative'>
+                            <img 
+                                src={project.image} 
+                                alt={project.title} 
+                                loading="lazy"
+                                className="sm:w-auto md:h-[300px] h-auto object-contain! rounded-md" 
+                            />
+                            <div className='absolute h-auto object-contain rounded-md inset-0 pointer-events-none bg-gradient-to-r from-black/30 via-transparent to-black/30'></div>
+                        </div>
                     </SwiperSlide>
                 ))}
                 </Swiper>
                 <h3 className="text-2xl font-semibold text-white text-center">{projectInfo.title}</h3>
                 <p className="mt-2 text-gray-100 h-auto">{projectInfo.description}</p>
                 <div className="flex justify-between mt-6 gap-2">
-                    <a href={projectInfo.github} target="_blank" className="text-gray-100 hover:text-white flex items-center gap-2">
+                    <a title='GitHub' href={projectInfo.github} target="_blank" className="text-gray-100 hover:text-white flex items-center gap-2">
                     <FaGithub size={30} /> <span className='hidden md:block'>GitHub</span> 
                     </a>
                     <div className="flex flex-wrap justify-center gap-4 p-1 rounded-md">
@@ -75,7 +83,7 @@ export default function ProjectSection() {
                         <SkillIcon key={i} width={30} height={30} className="text-3xl text-white" />
                     ))}
                     </div>
-                    <a href={projectInfo.website} target="_blank" className="text-gray-100 hover:text-white flex items-center gap-2">
+                    <a title='Live Demo' href={projectInfo.website} target="_blank" className="text-gray-100 hover:text-white flex items-center gap-2">
                     <FiExternalLink size={25} /> <span className='hidden md:block'>Live Demo</span> 
                     </a>
                 </div>

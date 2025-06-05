@@ -1,10 +1,8 @@
 import { slide as Menu } from "react-burger-menu";
 import './BurgerMenu.css'
-import {scrollToSection} from '../utils/common'
 
 export default function BurgerMenu({menuOpen, setMenuOpen}) {
-  const handleClickSection = (id) => {
-    scrollToSection(id)
+  const handleClickSection = () => {
     setMenuOpen(false);
   }
 
@@ -15,10 +13,10 @@ export default function BurgerMenu({menuOpen, setMenuOpen}) {
       customBurgerIcon={false} 
       right
     >
-      <a className="menu-item" onClick={() => handleClickSection("about")}>About Me</a>
-      <a className="menu-item" onClick={() => handleClickSection("skills")}>Skills</a>
-      <a className="menu-item" onClick={() => handleClickSection("projects")}>Projects</a>
-      <a className="menu-item" onClick={() => handleClickSection("contact")}>Contact Me</a>
+      <a className="menu-item" href="/#about" onClick={() => handleClickSection("about")}>About Me</a>
+      <a className="menu-item" href="/#skills" onClick={() => handleClickSection("skills")}>Skills</a>
+      <a className="menu-item" href="/#projects" onClick={() => handleClickSection("projects")}>Projects</a>
+      <a className="menu-item" href="/#contact" onClick={() => handleClickSection("contact")}>Contact Me</a>
     </Menu>
   );
 };

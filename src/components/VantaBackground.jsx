@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import Fog from 'vanta/dist/vanta.fog.min';
 import * as THREE from 'three';
 

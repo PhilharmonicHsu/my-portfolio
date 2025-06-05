@@ -8,7 +8,6 @@ import ProjectSection from '@components/sections/ProjectSection.jsx';
 import GoTop from '@components/GoTop'
 import ContactSection from '@components/sections/ContactSection.jsx';
 import Footer from '@components/Footer.jsx';
-import React, { useRef, useEffect } from 'react';
 import VantaBackground from '@components/VantaBackground';
 
 const App = () => {
